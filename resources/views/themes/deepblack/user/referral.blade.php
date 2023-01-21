@@ -22,7 +22,7 @@
                             <div class="input-group">
                                 <input
                                     type="text"
-                                    value="{{route('register.sponsor',[Auth::user()->username])}}"
+                                    value="{{route('register.sponsor',[Auth::user()->self_code])}}"
                                     class="form-control"
                                     id="sponsorURL"
                                     readonly

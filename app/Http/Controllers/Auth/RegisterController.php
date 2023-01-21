@@ -18,6 +18,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\JsonResponse;
 use Facades\App\Services\BasicService;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -40,7 +41,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-//    protected $redirectTo = RouteServiceProvider::HOME;
+    //    protected $redirectTo = RouteServiceProvider::HOME;
     protected $redirectTo = '/user/dashboard';
 
     /**
@@ -66,12 +67,12 @@ class RegisterController extends Controller
 
         $info = json_decode(json_encode(getIpInfo()), true);
         $country_code  = null;
-        if(!empty($info['code'])){
-        $country_code = @$info['code'][0];
+        if (!empty($info['code'])) {
+            $country_code = @$info['code'][0];
         }
         $countries = config('country');
 
-        return view(template().'auth.register',compact('country_code','countries'));
+        return view(template() . 'auth.register', compact('country_code', 'countries'));
     }
 
     public function sponsor($sponsor)
@@ -83,13 +84,12 @@ class RegisterController extends Controller
         session()->put('sponsor', $sponsor);
         $info = json_decode(json_encode(getIpInfo()), true);
         $country_code  = null;
-        if(!empty($info['code'])){
+        if (!empty($info['code'])) {
             $country_code = @$info['code'][0];
         }
         $countries = config('country');
 
-        return view(template().'auth.register', compact('sponsor', 'countries','country_code'));
-
+        return view(template() . 'auth.register', compact('sponsor', 'countries', 'country_code'));
     }
 
 
@@ -104,29 +104,32 @@ class RegisterController extends Controller
         if (config('basic.strong_password') == 0) {
             $rules['password'] = ['required', 'min:6', 'confirmed'];
         } else {
-            $rules['password'] = ["required", 'confirmed',
+            $rules['password'] = [
+                "required", 'confirmed',
                 Password::min(6)->mixedCase()
                     ->letters()
                     ->numbers()
                     ->symbols()
-                    ->uncompromised()];
+                    ->uncompromised()
+            ];
         }
 
-        if (basicControl()->reCaptcha_status_registration) {
-            $rules['g-recaptcha-response'] = ['sometimes', 'required','captcha'];
-        }
+        // if (basicControl()->reCaptcha_status_registration) {
+        //     $rules['g-recaptcha-response'] = ['sometimes', 'required','captcha'];
+        // }
 
         $rules['firstname'] = ['required', 'string', 'max:91'];
         $rules['lastname'] = ['required', 'string', 'max:91'];
         $rules['username'] = ['required', 'alpha_dash', 'min:5', 'unique:users,username'];
         $rules['email'] = ['required', 'string', 'email', 'max:255', 'unique:users,email'];
-        $rules['country_code'] = ['max:5'];
-        $rules['phone_code'] = ['required'];
+        $rules['sponsor'] = ['required', 'string', 'max:15', 'exists:users,self_code'];
+        // $rules['country_code'] = ['max:5'];
+        // $rules['phone_code'] = ['required'];
         $rules['phone'] = ['required'];
         return Validator::make($data, $rules, [
-            'firstname.required' => 'First Name Field is required',
-            'lastname.required' => 'Last Name Field is required',
-            'g-recaptcha-response.required' => 'The reCAPTCHA field is required.',
+            'firstname.required' => 'First Name is required',
+            'lastname.required' => 'Last Name is required',
+            // 'g-recaptcha-response.required' => 'The reCAPTCHA field is required.',
         ]);
     }
 
@@ -140,12 +143,17 @@ class RegisterController extends Controller
     {
         $basic = (object) config('basic');
 
-        $sponsor = session()->get('sponsor');
-        if ($sponsor != null) {
-            $sponsorId = User::where('username', $sponsor)->first();
-        } else {
-            $sponsorId = null;
+        // GENERATE REFER CODE
+        $str = DB::table('users')->orderBy('id','asc')->get();
+        foreach($str as $count){
+            $str = $count->codeValue;
         }
+        // $str = User::latest('codeValue');
+        $str += 1;
+        $user_code = 'INF';
+        $user_code_suffix = 'FX';
+        $user_code = $user_code . $str . $user_code_suffix;
+        // GENERATE REFER CODE
 
 
         return  User::create([
@@ -153,18 +161,16 @@ class RegisterController extends Controller
             'lastname' => $data['lastname'],
             'username' => $data['username'],
             'email' => $data['email'],
-            'referral_id' => ($sponsorId != null) ? $sponsorId->id : null,
-            'country_code' => $data['country_code'],
-            'phone_code' => $data['phone_code'],
+            'referral_id' => $data['sponsor'],
+            'self_code' => $user_code,
+            'codeValue' => $str,
+            // 'country_code' => $data['country_code'],
+            // 'phone_code' => $data['phone_code'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
             'email_verification' => ($basic->email_verification) ? 0 : 1,
             'sms_verification' => ($basic->sms_verification) ? 0 : 1,
         ]);
-
-
-
-
     }
 
     public function register(Request $request)
@@ -177,7 +183,7 @@ class RegisterController extends Controller
             'username' => $user->username,
         ];
         $action = [
-            "link" => route('admin.user-edit',$user->id),
+            "link" => route('admin.user-edit', $user->id),
             "icon" => "fas fa-user text-white"
         ];
 
@@ -192,7 +198,7 @@ class RegisterController extends Controller
             return $response;
         }
 
-        if($request->ajax()) {
+        if ($request->ajax()) {
             return route('user.home');
         }
 
@@ -220,15 +226,13 @@ class RegisterController extends Controller
             $amount = $basic->bonus_amount;
             $user->balance += $amount;
             $user->save();
-            $remarks = 'You got '.$basic->currency_symbol .getAmount($amount). ' joining bonus.';
+            $remarks = 'You got ' . $basic->currency_symbol . getAmount($amount) . ' joining bonus.';
             BasicService::makeTransaction($user, getAmount($amount), 0, '+', $balance_type = 'deposit', strRandom(), $remarks);
         }
-
     }
 
     protected function guard()
     {
         return Auth::guard();
     }
-
 }
