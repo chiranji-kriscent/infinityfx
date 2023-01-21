@@ -59,6 +59,35 @@
                     <div class="card-body">
 
 
+                        <h5 class="card-title">@lang('Commission Bonus')</h5>
+                        <div class="table-responsive">
+                            <table class="categories-show-table table table-hover table-striped table-bordered"
+                                   id="zero_config">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">@lang('Level')</th>
+                                    <th scope="col">@lang('Commission')</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @forelse($referrals->where('commission_type','commission') as $item)
+                                    <tr>
+                                        <td data-label="Level">@lang('LEVEL')# {{ $item->level }}</td>
+
+                                        <td data-label="@lang('Bonus')">
+                                            {{ $item->percent }} %
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="100%">@lang('No Data Found')</td>
+                                    </tr>
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+
+
                         <h5 class="card-title">@lang('Investment Bonus')</h5>
                         <div class="table-responsive">
                             <table class="categories-show-table table table-hover table-striped table-bordered"
@@ -132,6 +161,7 @@
                                         <option value="" disabled>@lang('Select Type')</option>
                                         <option value="invest">@lang('Investment Bonus')</option>
                                         <option value="deposit">@lang('Funding Bonus')</option>
+                                        <option value="commission">@lang('Commission Bonus')</option>
                                     </select>
                                 </div>
                             </div>

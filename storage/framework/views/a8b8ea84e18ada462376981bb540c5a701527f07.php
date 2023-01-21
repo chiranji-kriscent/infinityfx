@@ -58,6 +58,35 @@
                     <div class="card-body">
 
 
+                        <h5 class="card-title"><?php echo app('translator')->get('Commission Bonus'); ?></h5>
+                        <div class="table-responsive">
+                            <table class="categories-show-table table table-hover table-striped table-bordered"
+                                   id="zero_config">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col"><?php echo app('translator')->get('Level'); ?></th>
+                                    <th scope="col"><?php echo app('translator')->get('Commission'); ?></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php $__empty_1 = true; $__currentLoopData = $referrals->where('commission_type','commission'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                    <tr>
+                                        <td data-label="Level"><?php echo app('translator')->get('LEVEL'); ?># <?php echo e($item->level); ?></td>
+
+                                        <td data-label="<?php echo app('translator')->get('Bonus'); ?>">
+                                            <?php echo e($item->percent); ?> %
+                                        </td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                    <tr>
+                                        <td colspan="100%"><?php echo app('translator')->get('No Data Found'); ?></td>
+                                    </tr>
+                                <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+
                         <h5 class="card-title"><?php echo app('translator')->get('Investment Bonus'); ?></h5>
                         <div class="table-responsive">
                             <table class="categories-show-table table table-hover table-striped table-bordered"
@@ -131,6 +160,7 @@
                                         <option value="" disabled><?php echo app('translator')->get('Select Type'); ?></option>
                                         <option value="invest"><?php echo app('translator')->get('Investment Bonus'); ?></option>
                                         <option value="deposit"><?php echo app('translator')->get('Funding Bonus'); ?></option>
+                                        <option value="commission"><?php echo app('translator')->get('Commission Bonus'); ?></option>
                                     </select>
                                 </div>
                             </div>
