@@ -1,27 +1,8 @@
-{{-- @extends($theme.'layouts.app')
-@section('title', trans('Home'))
-
-@section('content')
-    @include($theme.'partials.heroBanner')
-    @include($theme.'sections.feature')
-    @include($theme.'sections.about-us')
-    @include($theme.'sections.why-chose-us')
-    @include($theme.'sections.investment')
-    @include($theme.'sections.faq')
-    @include($theme.'sections.referral')
-    @include($theme.'sections.testimonial')
-    @include($theme.'sections.how-it-work')
-    @include($theme.'sections.know-more-us')
-    @include($theme.'sections.investor')
-    @include($theme.'sections.deposit-withdraw')
-    @include($theme.'sections.news-letter')
-    @include($theme.'sections.blog')
-    @include($theme.'sections.we-accept')
-@endsection --}}
 
 
 
-{{-- CODED BY JK --}}
+
+
 <!DOCTYPE html>
 <html lang="zxx" dir="ltr">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -35,43 +16,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Site Properties -->
     <title>Infinity | Homepage</title>
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset($themeTrue . 'assets/plugins/owlcarousel/animate.css') }}"> --}}
+    
     <!-- Critical preload -->
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js') }}" as="script">
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/css/vendors/uikit.min.css') }}" as="script">
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/css/style.css') }}" as="script">
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/fonts/fa-brands-400.woff2') }}" as="font"
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js')); ?>" as="script">
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/css/vendors/uikit.min.css')); ?>" as="script">
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/css/style.css')); ?>" as="script">
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/fonts/fa-brands-400.woff2')); ?>" as="font"
         type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/fonts/fa-solid-900.woff2') }}" as="font"
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/fonts/fa-solid-900.woff2')); ?>" as="font"
         type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/fonts/lato-v16-latin-700.woff2') }}"
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/fonts/lato-v16-latin-700.woff2')); ?>"
         as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/fonts/lato-v16-latin-regular.woff2') }}"
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/fonts/lato-v16-latin-regular.woff2')); ?>"
         as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset($themeTrue . 'public/home/assets/fonts/montserrat-v14-latin-600.woff2') }}"
+    <link rel="preload" href="<?php echo e(asset($themeTrue . 'public/home/assets/fonts/montserrat-v14-latin-600.woff2')); ?>"
         as="font" type="font/woff2" crossorigin>
-    <link rel="shortcut icon" href="{{ asset($themeTrue . 'public/home/assets/favicon.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ asset($themeTrue . 'public/home/assets/css/vendors/uikit.min.css') }}">
-    <link rel="stylesheet" href="{{ asset($themeTrue . 'public/home/assets/css/style.css') }}">
-    {{-- <link rel="preload" href="public/assets/home/js/vendors/uikit.min.js" as="script"> --}}
-    {{-- <link rel="preload" href="/public/assets/home/css/vendors/uikit.min.css" as="style"> --}}
-    {{-- <link rel="preload" href="/public/assets/home/css/style.css" as="style"> --}}
+    <link rel="shortcut icon" href="<?php echo e(asset($themeTrue . 'public/home/assets/favicon.png')); ?>" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo e(asset($themeTrue . 'public/home/assets/css/vendors/uikit.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset($themeTrue . 'public/home/assets/css/style.css')); ?>">
+    
+    
+    
     <!-- Icon preload -->
-    {{-- <link rel="preload" href="/public/assets/home/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin> --}}
-    {{-- <link rel="preload" href="/public/assets/home/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin> --}}
+    
+    
     <!-- Font preload -->
-    {{-- <link rel="preload" href="/public/assets/home/fonts/lato-v16-latin-700.woff2" as="font" type="font/woff2" crossorigin> --}}
-    {{-- <link rel="preload" href="/public/assets/home/fonts/lato-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin> --}}
-    {{-- <link rel="preload" href="/public/assets/home/fonts/montserrat-v14-latin-600.woff2" as="font" type="font/woff2" crossorigin> --}}
+    
+    
+    
     <!-- Favicon and apple icon -->
-    {{-- <link rel="shortcut icon" href="/public/assets/home/favicon.png" type="image/x-icon">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/public/assets/home/css/vendors/uikit.min.css">
-    <link rel="stylesheet" href="/public/assets/home/css/style.css"> --}}
+    
 </head>
 
 <body>
-    {{-- HEADER --}}
+    
     <!-- preloader begin -->
     <div class="in-loader">
         <div></div>
@@ -136,8 +114,8 @@
                             <!-- module logo begin -->
                             <a class="uk-logo" href="index.php">
                                 <img class="in-offset-top-10 logo"
-                                    src="{{ asset($themeTrue . 'public/home/assets/img/logo.png') }}"
-                                    data-src="{{ asset($themeTrue . 'public/home/assets/img/logo.png') }}"
+                                    src="<?php echo e(asset($themeTrue . 'public/home/assets/img/logo.png')); ?>"
+                                    data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/logo.png')); ?>"
                                     alt="logo" width="220" height="" data-uk-img>
                             </a>
                             <!-- module logo begin -->
@@ -192,7 +170,7 @@
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             <div>
-                                <a href="{{route('login')}} " class="uk-button uk-button-text">Login</a>
+                                <a href="<?php echo e(route('login')); ?> " class="uk-button uk-button-text">Login</a>
                                 <a href="javascript:void(0);" class="uk-button uk-button-text">Sign up</a>
                             </div>
                         </div>
@@ -203,7 +181,7 @@
         </div>
         <!-- header content end -->
     </header>
-    {{-- HEADER --}}
+    
 
 
     <main>
@@ -233,8 +211,8 @@
                                 </div>
                                 <div class="uk-position-center">
                                     <img class="uk-animation-slide-top-small"
-                                        src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-slideshow-image-1.png') }}"
+                                        src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-slideshow-image-1.png')); ?>"
                                         alt="slideshow-image" width="862" height="540" data-uk-img>
                                 </div>
                             </div>
@@ -262,8 +240,8 @@
                                 </div>
                                 <div class="uk-position-center">
                                     <img class="uk-animation-slide-top-small"
-                                        src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-slideshow-image-2.png') }}"
+                                        src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-slideshow-image-2.png')); ?>"
                                         alt="slideshow-image" width="862" height="540" data-uk-img>
                                 </div>
                             </div>
@@ -331,8 +309,8 @@
                         <div class="uk-child-width-1-2@s uk-child-width-1-2@m" data-uk-grid>
                             <div class="uk-flex uk-flex-middle">
                                 <div class="uk-margin-right">
-                                    <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-icon-1.svg') }}"
+                                    <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-icon-1.svg')); ?>"
                                         alt="profit-icon" width="72" height="72" data-uk-img>
                                 </div>
                                 <div>
@@ -341,8 +319,8 @@
                             </div>
                             <div class="uk-flex uk-flex-middle">
                                 <div class="uk-margin-right">
-                                    <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-icon-2.svg') }}"
+                                    <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-icon-2.svg')); ?>"
                                         alt="profit-icon" width="72" height="72" data-uk-img>
                                 </div>
                                 <div>
@@ -351,8 +329,8 @@
                             </div>
                             <div class="uk-flex uk-flex-middle">
                                 <div class="uk-margin-right">
-                                    <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-icon-3.svg') }}"
+                                    <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-icon-3.svg')); ?>"
                                         alt="profit-icon" width="72" height="72" data-uk-img>
                                 </div>
                                 <div>
@@ -361,8 +339,8 @@
                             </div>
                             <div class="uk-flex uk-flex-middle">
                                 <div class="uk-margin-right">
-                                    <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                        data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-icon-4.svg') }}"
+                                    <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                        data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-icon-4.svg')); ?>"
                                         alt="profit-icon" width="72" height="72" data-uk-img>
                                 </div>
                                 <div>
@@ -403,8 +381,8 @@
                                 <div class="uk-card uk-card-default uk-box-shadow-medium">
                                     <div class="uk-card-media-top uk-overflow-hidden">
                                         <img class="uk-height-medium uk-width-1-1 uk-align-center uk-animation-reverse uk-transform-origin-top-right"
-                                            src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-content-2.jpg') }}"
+                                            src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-content-2.jpg')); ?>"
                                             uk-scrollspy="cls: uk-animation-kenburns; repeat: true" data-width
                                             data-height alt="sample-image" data-uk-img>
                                         <span></span>
@@ -506,7 +484,7 @@
                             <div class="uk-flex uk-flex-left uk-flex-middle">
                                 <div class="uk-margin-medium-right">
                                     <h1 class="uk-margin-remove-bottom uk-text-primary">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/secure.png') }}" alt=""
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/secure.png')); ?>" alt=""
                                             width="60">
                                     </h1>
                                 </div>
@@ -519,7 +497,7 @@
                             <div class="uk-flex uk-flex-left uk-flex-middle">
                                 <div class="uk-margin-medium-right">
                                     <h1 class="uk-margin-remove-bottom uk-text-primary">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/trad.png') }}" alt=""
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/trad.png')); ?>" alt=""
                                             width="60">
                                     </h1>
                                 </div>
@@ -532,7 +510,7 @@
                             <div class="uk-flex uk-flex-left uk-flex-middle">
                                 <div class="uk-margin-medium-right">
                                     <h1 class="uk-margin-remove-bottom uk-text-primary">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/fee.png') }}" alt=""
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/fee.png')); ?>" alt=""
                                             width="60">
                                     </h1>
                                 </div>
@@ -650,7 +628,7 @@
                             <div>
                                 <span class="in-icon-wrap circle large">2</span>
                                 <h4 class="uk-margin-top">Make An Invest</h4>
-                                <p> <a href="{{route('login')}}"> Login</a> your account to click
+                                <p> <a href="<?php echo e(route('login')); ?>"> Login</a> your account to click
                                     invest to start to earn the profit. </p>
                             </div>
                             <div>
@@ -802,13 +780,7 @@
                                 <h4 class="uk-margin-remove">Leaders</h4>
                                 <p>Making us one of the leading Forex Prime Broker.</p>
                             </div>
-                            {{-- <div>
-                                <h1 class="uk-heading-bullet">
-                                    <!-- <span class="count" data-counter-end="35">0</span>M+ -->
-
-                                </h1>
-                                <p>MT5 Platform</p>
-                            </div> --}}
+                            
                         </div>
                     </div>
                 </div>
@@ -836,8 +808,8 @@
                             <div>
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
                                     <span class="uk-float-left">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-ticker-1.svg') }}"
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-ticker-1.svg')); ?>"
                                             alt="profit-ticker" width="77" height="20" data-uk-img>
                                     </span>
                                     <span class="uk-float-right down">
@@ -848,8 +820,8 @@
                             <div>
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
                                     <span class="uk-float-left">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-ticker-2.svg') }}"
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-ticker-2.svg')); ?>"
                                             alt="profit-ticker" width="77" height="20" data-uk-img>
                                     </span>
                                     <span class="uk-float-right down">
@@ -860,8 +832,8 @@
                             <div>
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
                                     <span class="uk-float-left">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-ticker-3.svg') }}"
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-ticker-3.svg')); ?>"
                                             alt="profit-ticker" width="77" height="20" data-uk-img>
                                     </span>
                                     <span class="uk-float-right down">
@@ -872,8 +844,8 @@
                             <div>
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
                                     <span class="uk-float-left">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-ticker-4.svg') }}"
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-ticker-4.svg')); ?>"
                                             alt="profit-ticker" width="77" height="20" data-uk-img>
                                     </span>
                                     <span class="uk-float-right up">
@@ -884,8 +856,8 @@
                             <div class="uk-visible@m">
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
                                     <span class="uk-float-left">
-                                        <img src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                            data-src="{{ asset($themeTrue . 'public/home/assets/img/in-profit-ticker-5.svg') }}"
+                                        <img src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                            data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-profit-ticker-5.svg')); ?>"
                                             alt="profit-ticker" width="77" height="20" data-uk-img>
                                     </span>
                                     <span class="uk-float-right up">
@@ -937,7 +909,7 @@
         </div>-->
     </main>
 
-    {{-- FOOTER --}}
+    
     <footer>
         <!-- footer content begin -->
         <div class="uk-section uk-section-primary uk-padding-large uk-padding-remove-horizontal uk-margin-medium-top">
@@ -976,8 +948,8 @@
                     <div class="uk-flex-first uk-flex-last@m">
                         <ul class="uk-list uk-link-text">
                             <li><img class="uk-margin-small-bottom"
-                                    src="{{ asset($themeTrue . 'public/home/assets/img/in-lazy.svg') }}"
-                                    data-src="{{ asset($themeTrue . 'public/home/assets/img/logo-white.png') }}" alt="logo"
+                                    src="<?php echo e(asset($themeTrue . 'public/home/assets/img/in-lazy.svg')); ?>"
+                                    data-src="<?php echo e(asset($themeTrue . 'public/home/assets/img/logo-white.png')); ?>" alt="logo"
                                     width="130" height="36" data-uk-img></li>
                             <li><a href="javascript:void(0);"><i
                                         class="fas fa-envelope uk-margin-small-right"></i>support@infinityfx.info</a>
@@ -1018,14 +990,15 @@
         </div>
         <!-- module totop begin -->
     </footer>
-    {{-- FOOTER --}}
+    
 
     <!-- Javascript -->
-    <script src="{{ asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js') }} "></script>
-    <script src="{{ asset($themeTrue . 'public/home/assets/js/vendors/indonez.min.js') }} "></script>
+    <script src="<?php echo e(asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js')); ?> "></script>
+    <script src="<?php echo e(asset($themeTrue . 'public/home/assets/js/vendors/indonez.min.js')); ?> "></script>
     <!-- <script src="js/tp.widget.bootstrap.min.js" defer></script> -->
-    <script src="{{ asset($themeTrue . 'public/home/assets/js/config-theme.js') }}"></script>
+    <script src="<?php echo e(asset($themeTrue . 'public/home/assets/js/config-theme.js')); ?>"></script>
 </body>
 
 </html>
-{{-- CODED BY JK --}}
+
+<?php /**PATH C:\xampp\htdocs\laravel\infinityfx\resources\views/themes/deepblack/home.blade.php ENDPATH**/ ?>

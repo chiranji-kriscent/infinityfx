@@ -7,7 +7,7 @@
   'theme' => 'deepblack',
   'fraction_number' => 0,
   'paginate' => 20,
-  'email_verification' => 0,
+  'email_verification' => 1,
   'email_notification' => 1,
   'sms_verification' => 0,
   'sms_notification' => 0,
