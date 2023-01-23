@@ -21,25 +21,25 @@
                         </a>
                     </li>
                 <?php endif; ?>
-                <?php if(adminAccessRoute(config('role.identify_form.access.view'))): ?>
+                <!-- <?php if(adminAccessRoute(config('role.identify_form.access.view'))): ?>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.identify-form')); ?>" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
                             <span class="hide-menu"><?php echo app('translator')->get('KYC / Identity Form'); ?></span>
                         </a>
                     </li>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
                 <?php if(adminAccessRoute(config('role.manage_plan.access.view'))): ?>
                     
                     <li class="list-divider"></li>
                     <li class="nav-small-cap"><span class="hide-menu"><?php echo app('translator')->get('Manage Plan'); ?></span></li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.scheduleManage')); ?>" aria-expanded="false">
                             <i class="fas fa-clock"></i>
                             <span class="hide-menu"><?php echo app('translator')->get('Schedule'); ?></span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item <?php echo e(menuActive(['admin.planList','admin.planCreate','admin.planEdit*'],3)); ?>">
                         <a class="sidebar-link" href="<?php echo e(route('admin.planList')); ?>" aria-expanded="false">
@@ -100,7 +100,7 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.kyc.users.pending')); ?>"
                            aria-expanded="false">
                             <i class="fas fa-spinner"></i>
@@ -114,7 +114,7 @@
                             <i class="fas fa-file-invoice"></i>
                             <span class="hide-menu"><?php echo app('translator')->get('KYC Log'); ?></span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.email-send')); ?>"
@@ -226,7 +226,7 @@
                 <?php endif; ?>
 
 
-                <?php if(adminAccessRoute(config('role.subscriber.access.view'))): ?>
+                <!-- <?php if(adminAccessRoute(config('role.subscriber.access.view'))): ?>
                     <li class="list-divider"></li>
                     <li class="nav-small-cap"><span class="hide-menu"><?php echo app('translator')->get('Subscriber'); ?></span></li>
                     <li class="sidebar-item">
@@ -235,7 +235,7 @@
                             <span class="hide-menu"><?php echo app('translator')->get('Subscriber List'); ?></span>
                         </a>
                     </li>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
                 <?php if(adminAccessRoute(array_merge(config('role.website_controls.access.view'), config('role.language_settings.access.view')))): ?>
                     <li class="list-divider"></li>
@@ -319,7 +319,7 @@
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <?php if(adminAccessRoute(config('role.language_settings.access.view'))): ?>
+                    <!-- <?php if(adminAccessRoute(config('role.language_settings.access.view'))): ?>
                         <li class="sidebar-item <?php echo e(menuActive(['admin.language.create','admin.language.edit*','admin.language.keywordEdit*'],3)); ?>">
                             <a class="sidebar-link" href="<?php echo e(route('admin.language.index')); ?>"
                                aria-expanded="false">
@@ -327,19 +327,19 @@
                                 <span class="hide-menu"><?php echo app('translator')->get('Manage Language'); ?></span>
                             </a>
                         </li>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                 <?php endif; ?>
 
                 <?php if(adminAccessRoute(config('role.theme_settings.access.view'))): ?>
                     <li class="list-divider"></li>
-                    <li class="nav-small-cap"><span class="hide-menu"><?php echo app('translator')->get('Theme Settings'); ?></span></li>
+                    <li class="nav-small-cap"><span class="hide-menu"><?php echo app('translator')->get('Settings'); ?></span></li>
 
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.manage.theme')); ?>" aria-expanded="false">
                             <i class="fas fa-image"></i><span
                                 class="hide-menu"><?php echo app('translator')->get('Manage Theme'); ?></span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.logo-seo')); ?>" aria-expanded="false">
@@ -347,15 +347,15 @@
                                 class="hide-menu"><?php echo app('translator')->get('Manage Logo & SEO'); ?></span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo e(route('admin.breadcrumb')); ?>" aria-expanded="false">
                             <i class="fas fa-file-image"></i><span
                                 class="hide-menu"><?php echo app('translator')->get('Manage Breadcrumb'); ?></span>
                         </a>
-                    </li>
+                    </li> -->
 
 
-                    <li class="sidebar-item <?php echo e(menuActive(['admin.template.show*'],3)); ?>">
+                    <!-- <li class="sidebar-item <?php echo e(menuActive(['admin.template.show*'],3)); ?>">
                         <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                             <i class="fas fa-clipboard-list"></i>
                             <span class="hide-menu"><?php echo app('translator')->get('Manage Content'); ?></span>
@@ -398,7 +398,7 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 <li class="list-divider"></li>
             </ul>
         </nav>

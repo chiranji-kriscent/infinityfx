@@ -1,7 +1,7 @@
 <header class="topbar" data-navbarbg="skin6">
 
     <nav class="navbar top-navbar navbar-expand-md">
-        <div class="navbar-header" data-logobg="skin6">
+        <div class="navbar-header" data-logobg="skin6" style="border-bottom: 2px solid #f59e32;">
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                     class="ti-menu ti-close"></i></a>
             <div class="navbar-brand">

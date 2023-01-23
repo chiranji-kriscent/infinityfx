@@ -28,7 +28,7 @@
   'push_notification' => 0,
   'min_transfer' => '330.00',
   'max_transfer' => '900000.00',
-  'transfer_charge' => '10',
+  'transfer_charge' => '0',
   'bonus_amount' => '0',
   'joining_bonus' => 1,
   'error_log' => 1,

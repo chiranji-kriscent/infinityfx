@@ -21,25 +21,25 @@
                         </a>
                     </li>
                 @endif
-                @if(adminAccessRoute(config('role.identify_form.access.view')))
+                <!-- @if(adminAccessRoute(config('role.identify_form.access.view')))
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{route('admin.identify-form')}}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
                             <span class="hide-menu">@lang('KYC / Identity Form')</span>
                         </a>
                     </li>
-                @endif
+                @endif -->
 
                 @if(adminAccessRoute(config('role.manage_plan.access.view')))
                     {{--Manage Plan--}}
                     <li class="list-divider"></li>
                     <li class="nav-small-cap"><span class="hide-menu">@lang('Manage Plan')</span></li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('admin.scheduleManage') }}" aria-expanded="false">
                             <i class="fas fa-clock"></i>
                             <span class="hide-menu">@lang('Schedule')</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item {{menuActive(['admin.planList','admin.planCreate','admin.planEdit*'],3)}}">
                         <a class="sidebar-link" href="{{ route('admin.planList')}}" aria-expanded="false">
@@ -100,7 +100,7 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('admin.kyc.users.pending') }}"
                            aria-expanded="false">
                             <i class="fas fa-spinner"></i>
@@ -114,7 +114,7 @@
                             <i class="fas fa-file-invoice"></i>
                             <span class="hide-menu">@lang('KYC Log')</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('admin.email-send') }}"
@@ -226,7 +226,7 @@
                 @endif
 
 
-                @if(adminAccessRoute(config('role.subscriber.access.view')))
+                <!-- @if(adminAccessRoute(config('role.subscriber.access.view')))
                     <li class="list-divider"></li>
                     <li class="nav-small-cap"><span class="hide-menu">@lang('Subscriber')</span></li>
                     <li class="sidebar-item">
@@ -235,7 +235,7 @@
                             <span class="hide-menu">@lang('Subscriber List')</span>
                         </a>
                     </li>
-                @endif
+                @endif -->
 
                 @if(adminAccessRoute(array_merge(config('role.website_controls.access.view'), config('role.language_settings.access.view'))))
                     <li class="list-divider"></li>
@@ -319,7 +319,7 @@
                             </ul>
                         </li>
                     @endif
-                    @if(adminAccessRoute(config('role.language_settings.access.view')))
+                    <!-- @if(adminAccessRoute(config('role.language_settings.access.view')))
                         <li class="sidebar-item {{menuActive(['admin.language.create','admin.language.edit*','admin.language.keywordEdit*'],3)}}">
                             <a class="sidebar-link" href="{{  route('admin.language.index') }}"
                                aria-expanded="false">
@@ -327,19 +327,19 @@
                                 <span class="hide-menu">@lang('Manage Language')</span>
                             </a>
                         </li>
-                    @endif
+                    @endif -->
                 @endif
 
                 @if(adminAccessRoute(config('role.theme_settings.access.view')))
                     <li class="list-divider"></li>
-                    <li class="nav-small-cap"><span class="hide-menu">@lang('Theme Settings')</span></li>
+                    <li class="nav-small-cap"><span class="hide-menu">@lang('Settings')</span></li>
 
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="{{route('admin.manage.theme')}}" aria-expanded="false">
                             <i class="fas fa-image"></i><span
                                 class="hide-menu">@lang('Manage Theme')</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{route('admin.logo-seo')}}" aria-expanded="false">
@@ -347,15 +347,15 @@
                                 class="hide-menu">@lang('Manage Logo & SEO')</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="{{route('admin.breadcrumb')}}" aria-expanded="false">
                             <i class="fas fa-file-image"></i><span
                                 class="hide-menu">@lang('Manage Breadcrumb')</span>
                         </a>
-                    </li>
+                    </li> -->
 
 
-                    <li class="sidebar-item {{menuActive(['admin.template.show*'],3)}}">
+                    <!-- <li class="sidebar-item {{menuActive(['admin.template.show*'],3)}}">
                         <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                             <i class="fas fa-clipboard-list"></i>
                             <span class="hide-menu">@lang('Manage Content')</span>
@@ -398,7 +398,7 @@
                             @endforeach
                         </ul>
                     </li>
-                @endif
+                @endif -->
                 <li class="list-divider"></li>
             </ul>
         </nav>
