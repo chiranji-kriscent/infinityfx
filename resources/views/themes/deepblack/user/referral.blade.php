@@ -59,7 +59,7 @@
                                                     </thead>
                                                     <tbody>
                                                     @foreach($referral as $user)
-                                                        <tr>
+                                                        <tr class="table-info">
 
                                                             <td data-label="@lang('Username')">
                                                                 @lang($user->username)

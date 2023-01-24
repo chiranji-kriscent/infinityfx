@@ -1,7 +1,7 @@
 <header class="topbar" data-navbarbg="skin6">
 
     <nav class="navbar top-navbar navbar-expand-md">
-        <div class="navbar-header" data-logobg="skin6">
+        <div class="navbar-header" data-logobg="skin6" style="border-bottom: 2px solid #f59e32;">
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                     class="ti-menu ti-close"></i></a>
             <div class="navbar-brand">
@@ -29,7 +29,7 @@
                        id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
                         <span><i data-feather="bell" class="svg-icon"></i></span>
-                        <span class="badge badge-primary notify-no rounded-circle" v-cloak>@{{ items.length }}</span>
+                        <span class="badge badge-warning notify-no rounded-circle" v-cloak>@{{ items.length }}</span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
@@ -107,8 +107,8 @@
                         <img src="{{getFile(config('location.admin.path').Auth::guard('admin')->user()->image)}}"
                              alt="user"
                              class="rounded-circle width-40p">
-                        <span class="ml-2 d-none d-lg-inline-block"><span class="text-dark">@lang('Hello,')</span> <span
-                                class="text-dark">{{ Auth::guard('admin')->user()->username }}</span> <i
+                        <span class="ml-2 d-none d-lg-inline-block"><span class="text-light">@lang('Hello,')</span> <span
+                                class="text-light">{{ Auth::guard('admin')->user()->username }}</span> <i
                                 data-feather="chevron-down"
                                 class="svg-icon"></i></span>
                     </a>
