@@ -168,7 +168,7 @@
     <img src="{{asset($themeTrue.'img/bitcoin.gif')}}" alt="@lang('preloader')" class="loader" />
 </div>
 <!-- end preloader -->
-{{-- ghgjhjh --}}
+{{-- {{-- ghgj --}}
 
 <script src="{{asset($themeTrue.'assets/bootstrap/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset($themeTrue.'assets/jquery/jquery-3.6.0.min.js')}}"></script>
