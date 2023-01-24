@@ -46,7 +46,7 @@
                             <input type="text" name="token" value="{{ $token }}">
                             <input type="text" name="email" value="{{ $email }}">
                             <div class="row">
-                                
+
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="password" class="text-md-right">{{ __('Password') }}</label>

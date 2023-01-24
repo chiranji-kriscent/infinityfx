@@ -555,7 +555,7 @@ class HomeController extends Controller
      */
     public function payoutMoney()
     {
-        $data['title'] = "Payout Money";
+        $data['title'] = "Auto Withdrawal";
         $data['gateways'] = PayoutMethod::whereStatus(1)->get();
         return view($this->theme . 'user.payout.money', $data);
     }
@@ -767,7 +767,7 @@ class HomeController extends Controller
     public function referral()
     {
         $title = "My Referral";
-        $referrals = getLevelUser($this->user->id);
+        $referrals = getLevelUser($this->user->self_code);
         return view($this->theme . 'user.referral', compact('title', 'referrals'));
     }
 
@@ -806,34 +806,36 @@ class HomeController extends Controller
 
     public function moneyTransfer()
     {
-        $page_title = "Balance Transfer";
-        return view($this->theme . 'user.money-transfer', compact('page_title'));
+        $page_title = "Wallet Transfer";
+        $uid = $this->user->id;
+        $data = DB::select("SELECT * FROM money_transfers WHERE sender_id = '$uid'");
+        return view($this->theme . 'user.money-transfer', compact('page_title','data'));
     }
 
     public function moneyTransferConfirm(Request $request)
     {
 
         $this->validate($request, [
-            'email' => 'required',
+            'sponsor' => 'required',
             'amount' => 'required',
-            'wallet_type' => ['required', Rule::in(['balance', 'interest_balance'])],
-            'password' => 'required'
+            // 'wallet_type' => ['required', Rule::in(['balance', 'interest_balance'])],
+            // 'password' => 'required'
         ], [
-            'wallet_type.required' => 'Please Select a wallet'
+            // 'wallet_type.required' => 'Please Select a wallet'
         ]);
 
         $basic = (object)config('basic');
-        $email = trim($request->email);
+        $sponsorID = $request->sponsor;
 
-        $receiver = User::where('email', $email)->first();
+        $receiver = User::where('self_code', $sponsorID)->first();
 
 
         if (!$receiver) {
-            session()->flash('error', 'This Email  could not Found!');
+            session()->flash('error', 'This ID could not Found!');
             return back();
         }
         if ($receiver->id == Auth::id()) {
-            session()->flash('error', 'This Email  could not Found!');
+            session()->flash('error', 'This ID could not Found!');
             return back()->withInput();
         }
 
@@ -855,7 +857,7 @@ class HomeController extends Controller
         $transferCharge = ($request->amount * $basic->transfer_charge) / 100;
 
         $user = Auth::user();
-        $wallet_type = $request->wallet_type;
+        $wallet_type = 'balance';
         if ($user[$wallet_type] >= ($request->amount + $transferCharge)) {
 
             if (Hash::check($request->password, $user->password)) {

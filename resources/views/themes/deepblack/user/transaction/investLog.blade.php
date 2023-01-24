@@ -30,6 +30,9 @@
                         <h2>{{trans('Invest History')}}</h2>
                     </div>
                 </div>
+                <div class="col-2">
+                    <a href="{{ route('user.addFund') }} " class="btn btn-success">Add Fund</a>
+                </div>
             </div>
 
             <div class="row">
