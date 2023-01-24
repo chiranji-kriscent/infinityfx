@@ -187,7 +187,7 @@
                                                 Remember me</label>
                                         </div>
                                         <div class="uk-margin-small uk-width-expand uk-text-small">
-                                            <label class="uk-align-right"><a class="uk-link-reset" href="#">Forgot
+                                            <label class="uk-align-right"><a class="uk-link-reset" href="{{route('password.request')}} ">Forgot
                                                     password?</a></label>
                                         </div>
 
@@ -212,6 +212,6 @@
     <script src="{{ asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js') }} "></script>
     <script src="{{ asset($themeTrue . 'public/home/assets/js/vendors/indonez.min.js') }} "></script>
 </body>
-{{ asset($themeTrue . 'public/home/assets/') }}
+{{-- {{ asset($themeTrue . 'public/home/assets/') }} --}}
 
 </html>

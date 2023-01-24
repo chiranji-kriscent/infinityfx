@@ -115,7 +115,7 @@ unset($__errorArgs, $__bag); ?>
                                                 Remember me</label>
                                         </div>
                                         <div class="uk-margin-small uk-width-expand uk-text-small">
-                                            <label class="uk-align-right"><a class="uk-link-reset" href="#">Forgot
+                                            <label class="uk-align-right"><a class="uk-link-reset" href="<?php echo e(route('password.request')); ?> ">Forgot
                                                     password?</a></label>
                                         </div>
 
@@ -140,7 +140,6 @@ unset($__errorArgs, $__bag); ?>
     <script src="<?php echo e(asset($themeTrue . 'public/home/assets/js/vendors/uikit.min.js')); ?> "></script>
     <script src="<?php echo e(asset($themeTrue . 'public/home/assets/js/vendors/indonez.min.js')); ?> "></script>
 </body>
-<?php echo e(asset($themeTrue . 'public/home/assets/')); ?>
 
 
 </html>

@@ -19,11 +19,11 @@
                     data-aos-duration="800"
                     data-aos-anchor-placement="center-bottom"
                 >
-                    <div class="img-box">
+                    <div  class="img-box">
                         <img src="<?php echo e(asset($themeTrue.'img/icon/fund.png')); ?>" alt="<?php echo app('translator')->get('Main Balance'); ?>"/>
                     </div>
-                    <h4><?php echo app('translator')->get('Main Balance'); ?></h4>
-                    <h2><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($walletBalance, config('basic.fraction_number'))); ?></h2>
+                    <h4 class="head-title"><?php echo app('translator')->get('Main Balance'); ?></h4>
+                    <h2 class="head-title"><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($walletBalance, config('basic.fraction_number'))); ?></h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -36,8 +36,8 @@
                     <div class="img-box">
                     <img src="<?php echo e(asset($themeTrue.'img/icon/money-bag.png')); ?>" alt="<?php echo app('translator')->get('Interest Balance'); ?>"/>
                     </div>
-                    <h4><?php echo app('translator')->get('Interest Balance'); ?></h4>
-                    <h2><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($interestBalance, config('basic.fraction_number'))); ?></h2>
+                    <h4 style="color: black"><?php echo app('translator')->get('Interest Balance'); ?></h4>
+                    <h2 style="color: black"><small><sup ><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($interestBalance, config('basic.fraction_number'))); ?></h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -50,8 +50,8 @@
                     <div class="img-box">
                     <img src="<?php echo e(asset($themeTrue.'img/icon/invest.png')); ?>" alt="<?php echo app('translator')->get('Total Deposit'); ?>"/>
                     </div>
-                    <h4><?php echo app('translator')->get('Total Deposit'); ?></h4>
-                    <h2><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($totalDeposit, config('basic.fraction_number'))); ?></h2>
+                    <h4 style="color: black"><?php echo app('translator')->get('Total Deposit'); ?></h4>
+                    <h2 style="color: black"><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($totalDeposit, config('basic.fraction_number'))); ?></h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
@@ -64,8 +64,8 @@
                     <div class="img-box">
                     <img src="<?php echo e(asset($themeTrue.'img/icon/pay-history.png')); ?>" alt="<?php echo app('translator')->get('Total Earn'); ?>"/>
                     </div>
-                    <h4><?php echo app('translator')->get('Total Earn'); ?></h4>
-                    <h2><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($totalInterestProfit, config('basic.fraction_number'))); ?></h2>
+                    <h4 style="color: black"><?php echo app('translator')->get('Total Earn'); ?></h4>
+                    <h2 style="color: black"><small><sup><?php echo e(trans(config('basic.currency_symbol'))); ?></sup></small><?php echo e(getAmount($totalInterestProfit, config('basic.fraction_number'))); ?></h2>
                 </div>
             </div>
         </div>

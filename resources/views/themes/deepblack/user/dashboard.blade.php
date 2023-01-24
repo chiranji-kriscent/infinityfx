@@ -20,11 +20,11 @@
                     data-aos-duration="800"
                     data-aos-anchor-placement="center-bottom"
                 >
-                    <div class="img-box">
+                    <div  class="img-box">
                         <img src="{{asset($themeTrue.'img/icon/fund.png')}}" alt="@lang('Main Balance')"/>
                     </div>
-                    <h4>@lang('Main Balance')</h4>
-                    <h2><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($walletBalance, config('basic.fraction_number'))}}</h2>
+                    <h4 class="head-title">@lang('Main Balance')</h4>
+                    <h2 class="head-title"><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($walletBalance, config('basic.fraction_number'))}}</h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -37,8 +37,8 @@
                     <div class="img-box">
                     <img src="{{asset($themeTrue.'img/icon/money-bag.png')}}" alt="@lang('Interest Balance')"/>
                     </div>
-                    <h4>@lang('Interest Balance')</h4>
-                    <h2><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($interestBalance, config('basic.fraction_number'))}}</h2>
+                    <h4 style="color: black">@lang('Interest Balance')</h4>
+                    <h2 style="color: black"><small><sup >{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($interestBalance, config('basic.fraction_number'))}}</h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -51,8 +51,8 @@
                     <div class="img-box">
                     <img src="{{asset($themeTrue.'img/icon/invest.png')}}" alt="@lang('Total Deposit')"/>
                     </div>
-                    <h4>@lang('Total Deposit')</h4>
-                    <h2><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($totalDeposit, config('basic.fraction_number'))}}</h2>
+                    <h4 style="color: black">@lang('Total Deposit')</h4>
+                    <h2 style="color: black"><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($totalDeposit, config('basic.fraction_number'))}}</h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
@@ -65,8 +65,8 @@
                     <div class="img-box">
                     <img src="{{asset($themeTrue.'img/icon/pay-history.png')}}" alt="@lang('Total Earn')"/>
                     </div>
-                    <h4>@lang('Total Earn')</h4>
-                    <h2><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($totalInterestProfit, config('basic.fraction_number'))}}</h2>
+                    <h4 style="color: black">@lang('Total Earn')</h4>
+                    <h2 style="color: black"><small><sup>{{trans(config('basic.currency_symbol'))}}</sup></small>{{getAmount($totalInterestProfit, config('basic.fraction_number'))}}</h2>
                 </div>
             </div>
         </div>

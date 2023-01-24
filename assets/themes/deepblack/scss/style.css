@@ -813,7 +813,7 @@ a.gold-btn {
 .statistic-section .box {
     padding: 30px;
     padding: 30px;
-    background: #222;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     text-align: center;
     border: 2px solid transparent;
@@ -822,7 +822,7 @@ a.gold-btn {
 .statistic-section .box .img-box {
     -webkit-clip-path: polygon(30% 0, 70% 0, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
     clip-path: polygon(30% 0, 70% 0, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
-    background: #111;
+    background: rgb(255, 255, 255);
     width: 80px;
     height: 65px;
     padding: 15px;
@@ -836,7 +836,7 @@ a.gold-btn {
 
 .statistic-section .box h2 {
     margin-bottom: 0;
-    color: #FFF;
+    color: rgb(0, 0, 0);
 }
 
 .statistic-section .box .gold-btn {
@@ -846,8 +846,15 @@ a.gold-btn {
 
 .statistic-section .box:hover {
     background: linear-gradient(135deg, #802A9E, #802A9E, #802A9E, #802A9E) border-box;
-    border: 2px solid transparent;
+    border: 2px solid red;
+
 }
+
+.statistic-section .box:hover .head-title{
+    color: white;
+}
+
+
 
 .testimonial-section {
     padding: 100px 0;

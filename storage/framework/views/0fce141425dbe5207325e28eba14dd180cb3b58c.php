@@ -47,7 +47,8 @@
         <div id="content">
            <div class="overlay">
               <!----- navbar ------>
-              <nav class="navbar navbar-expand-lg fixed-top">
+              <nav class="navbar navbar-expand-lg fixed-top mb-6" style="
+              background: #fff7f7;">
                  <div class="container-fluid">
                     <a class="navbar-brand golden-text" href="<?php echo e(route('home')); ?>">
                         <img src="<?php echo e(getFile(config('location.logoIcon.path').'logo.png')); ?>"
