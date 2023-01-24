@@ -42,7 +42,7 @@
     <div class="wrapper">
         <!------ sidebar ------->
         @include($theme.'partials.sidebar')
-
+{{-- hjghh --}}
         <!------- Nav + Content ---------->
         <div id="content">
            <div class="overlay">
