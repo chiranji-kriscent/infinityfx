@@ -52,7 +52,7 @@
 
 
         <footer class="footer text-center text-muted">
-            {{trans('Copyrights')}} © {{date('Y')}} @lang('All Rights Reserved By') @lang($basic->site_title)
+            {{trans('Copyrights')}} ©  @lang('All Rights Reserved By') @lang($basic->site_title)
         </footer>
 
     </div>

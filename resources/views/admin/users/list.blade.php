@@ -72,12 +72,15 @@
                                    id="check-all">
                             <label for="check-all"></label>
                         </th>
-                        <th scope="col">@lang('No.')</th>
+                        <th scope="col">@lang('S.N')</th>
+                        <th scope="col">@lang('Date Of Joing')</th>
                         <th scope="col">@lang('Name')</th>
+                        <th scope="col">@lang('ID')</th>
                         <th scope="col">@lang('Email')</th>
+                        <th scope="col">@lang('Mobile')</th>
+                        <th scope="col">@lang('Last Login')</th>
                         <th scope="col">@lang('Balance')</th>
                         <th scope="col">@lang('Interest Fund')</th>
-                        <th scope="col">@lang('Last Login')</th>
                         <th scope="col">@lang('Status')</th>
                         <th scope="col">@lang('Action')</th>
                     </tr>

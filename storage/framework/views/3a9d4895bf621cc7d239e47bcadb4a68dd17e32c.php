@@ -52,7 +52,7 @@
 
 
         <footer class="footer text-center text-muted">
-            <?php echo e(trans('Copyrights')); ?> © <?php echo e(date('Y')); ?> <?php echo app('translator')->get('All Rights Reserved By'); ?> <?php echo app('translator')->get($basic->site_title); ?>
+            <?php echo e(trans('Copyrights')); ?> ©  <?php echo app('translator')->get('All Rights Reserved By'); ?> <?php echo app('translator')->get($basic->site_title); ?>
         </footer>
 
     </div>

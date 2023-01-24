@@ -71,12 +71,15 @@
                                    id="check-all">
                             <label for="check-all"></label>
                         </th>
-                        <th scope="col"><?php echo app('translator')->get('No.'); ?></th>
+                        <th scope="col"><?php echo app('translator')->get('S.N'); ?></th>
+                        <th scope="col"><?php echo app('translator')->get('Date Of Joing'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Name'); ?></th>
+                        <th scope="col"><?php echo app('translator')->get('ID'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Email'); ?></th>
+                        <th scope="col"><?php echo app('translator')->get('Mobile'); ?></th>
+                        <th scope="col"><?php echo app('translator')->get('Last Login'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Balance'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Interest Fund'); ?></th>
-                        <th scope="col"><?php echo app('translator')->get('Last Login'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Status'); ?></th>
                         <th scope="col"><?php echo app('translator')->get('Action'); ?></th>
                     </tr>
